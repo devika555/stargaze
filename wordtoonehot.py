@@ -4,6 +4,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
 # define example
 data = ['cold', 'cold', 'warm', 'cold', 'hot', 'hot', 'warm', 'cold', 'warm', 'hot']
+print(type(data))
 values = array(data)
 print(values)
 # integer encode
@@ -15,7 +16,7 @@ onehot_encoder = OneHotEncoder(sparse=False)
 integer_encoded = integer_encoded.reshape(len(integer_encoded), 1)
 onehot_encoded = onehot_encoder.fit_transform(integer_encoded)
 print(onehot_encoded)
-# invert first example
-inverted = label_encoder.inverse_transform([argmax(onehot_encoded[0, :])])
-print(inverted)
+# invert first example when needed to convert back to label
+#inverted = label_encoder.inverse_transform([argmax(onehot_encoded[0, :])])
+#print(inverted)
 
